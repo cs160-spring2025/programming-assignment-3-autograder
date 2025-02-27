@@ -112,7 +112,7 @@ test.beforeEach(async ({ page }) => {
 test(
   `Test 1: Check if the username is stored in the local storage`,
   {
-    annotation: { type: "points", description: "2" },
+    annotation: { type: "points", description: "0.5" },
   },
   async ({ page }) => {
     const username = page.locator("#name-input");
@@ -130,7 +130,7 @@ test(
 test(
   `Test 2: Check if the video element is properly displayed with webcam feed`,
   {
-    annotation: { type: "points", description: "2" },
+    annotation: { type: "points", description: "0.5" },
   },
   async ({ page }) => {
     const pfp = page.locator("#profile-pic");
@@ -148,7 +148,7 @@ test(
 test(
   "Test 3: data URL is as expected (this might be flaky; if it fails, we'll still check manually!)",
   {
-    annotation: { type: "points", description: "2" },
+    annotation: { type: "points", description: "1" },
   },
   async ({ page }) => {
     const pfp = page.locator("#profile-pic");

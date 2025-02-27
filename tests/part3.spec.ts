@@ -172,8 +172,8 @@ const setupSpeechRecognition = async (page: Page, prompts: string[]) => {
         }, 700);
       };
 
-      stop = () => {};
-      abort = () => {};
+      stop = () => { };
+      abort = () => { };
     }
     const recognition = SpeechRecognitionMock;
     // @ts-ignore
@@ -219,7 +219,7 @@ async function testBefore(page: Page, prompts: string[]) {
 test(
   `Will flip the bedroom light once with a voice command`,
   {
-    annotation: { type: "points", description: ".25" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, ["Flip the bedroom light"]);
@@ -236,7 +236,7 @@ test(
 test(
   `Will flip the bathroom light once with a voice command`,
   {
-    annotation: { type: "points", description: ".25" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, ["Flip the bathroom light please"]);
@@ -255,7 +255,7 @@ test(
 test(
   `Will flip the kitchen light once with a voice command`,
   {
-    annotation: { type: "points", description: ".25" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, ["Kitchen light"]);
@@ -272,7 +272,7 @@ test(
 test(
   `Will flip the living room light once with a voice command`,
   {
-    annotation: { type: "points", description: ".25" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, ["Living room"]);
@@ -296,7 +296,7 @@ test(
 test(
   `Will flip the bedroom light twice with a voice command`,
   {
-    annotation: { type: "points", description: ".25" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, [
@@ -322,7 +322,7 @@ test(
 test(
   `Will flip the bathroom light twice with a voice command`,
   {
-    annotation: { type: "points", description: ".25" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, [
@@ -350,7 +350,7 @@ test(
 test(
   `Will flip the kitchen light twice with a voice command`,
   {
-    annotation: { type: "points", description: ".25" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, ["Kitchen light", "Kitchen light"]);
@@ -373,7 +373,7 @@ test(
 test(
   `Will flip the living room light twice with a voice command`,
   {
-    annotation: { type: "points", description: ".25" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, ["Living room", "Living room"]);
@@ -405,7 +405,7 @@ test(
 test(
   `Will flip the bedroom and bathroom lights with a voice command`,
   {
-    annotation: { type: "points", description: ".5" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, ["Flip the bedroom light and the bathroom light"]);
@@ -424,7 +424,7 @@ test(
 test(
   `Will flip the kitchen and living room lights with a voice command`,
   {
-    annotation: { type: "points", description: ".5" },
+    annotation: { type: "points", description: ".1" },
   },
   async ({ page }) => {
     await testBefore(page, ["Kitchen light and living room"]);
@@ -452,7 +452,7 @@ test(
 test(
   `Flips a bunch of lights`,
   {
-    annotation: { type: "points", description: "1" },
+    annotation: { type: "points", description: ".2" },
   },
   async ({ page }) => {
     await testBefore(page, [
@@ -518,7 +518,7 @@ test(
 test(
   `Flips the bedroom light and checks the spoken text`,
   {
-    annotation: { type: "points", description: "1.25" },
+    annotation: { type: "points", description: "0.5" },
   },
   async ({ page }) => {
     await testBefore(page, ["Flip the bedroom light"]);
@@ -543,7 +543,7 @@ test(
 test(
   `Says some garbage and checks the spoken text`,
   {
-    annotation: { type: "points", description: "0.75" },
+    annotation: { type: "points", description: "0.3" },
   },
   async ({ page }) => {
     await testBefore(page, ["Water my plants"]);
