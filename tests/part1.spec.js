@@ -19,7 +19,7 @@ test(
 
     // First, remove this line -- this will be a way to test that you've
     // correctly included the test file in your submission.
-    test.fail('Be sure to include part1.spec.js in your submission!');
+    expect(false, 'Be sure to include part1.spec.js in your submission!').toBeTruthy();
 
     // You can find elements in various ways
     // Looking for specific text
@@ -38,3 +38,4 @@ test(
     // Don't forget to demonstrate filling out the task form!
   }
 );
+
