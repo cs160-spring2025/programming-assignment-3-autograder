@@ -202,11 +202,15 @@ test(
         coordsCorrect = true;
       }
 
+      const mockedResponse = JSON.parse(JSON.stringify(MOCK_FORECAST_RESPONSE));
+      mockedResponse.city.coord.lat = 42;
+      mockedResponse.city.coord.lon = -136;
+
       // Then fulfill with the mock
       await route.fulfill({
         status: 200,
         contentType: "application/json",
-        body: JSON.stringify(MOCK_FORECAST_RESPONSE),
+        body: JSON.stringify(mockedResponse),
       });
     });
 
