@@ -26,10 +26,17 @@ async function mockForecastAPI(page: Page) {
 
     forecastCalled = true;
 
+    const requestLat = route.request().url().match(/lat=([^&]+)/)?.[1] || "37.8748";
+    const requestLon = route.request().url().match(/lon=([^&]+)/)?.[1] || "-122.2572";
+
+    const mockedResponse = JSON.parse(JSON.stringify(MOCK_FORECAST_RESPONSE));
+    mockedResponse.city.coord.lat = parseFloat(requestLat) || 37.8748;
+    mockedResponse.city.coord.lon = parseFloat(requestLon) || -122.2572;
+
     await route.fulfill({
       status: 200,
       contentType: "application/json",
-      body: JSON.stringify(MOCK_FORECAST_RESPONSE),
+      body: JSON.stringify(mockedResponse),
     });
   });
 
