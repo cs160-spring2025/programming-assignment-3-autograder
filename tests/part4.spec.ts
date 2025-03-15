@@ -121,7 +121,7 @@ test(
     await page.reload();
 
     await page.waitForLoadState("domcontentloaded");
-    await page.waitForTimeout(100);
+    await page.waitForTimeout(500);
 
     expect(await username.inputValue()).toBe("Chris");
   }
@@ -136,12 +136,19 @@ test(
     const pfp = page.locator("#profile-pic");
 
     pfp.click();
+    // need to wait for modal event to fire, video to load in, etc.
+    await page.waitForTimeout(500);
+
     const video = await page.waitForSelector("#video");
 
     expect(await video.isVisible()).toBe(true);
 
     // @ts-ignore
     console.log(await video.evaluate((el) => el.srcObject._is_mock));
+
+    // TODO: add the following line. seem to have forgotten this for su24/sp25
+    // @ts-ignore
+    //expect(await video.evaluate((el) => el.srcObject._is_mock)).toBe(true);
   }
 );
 
