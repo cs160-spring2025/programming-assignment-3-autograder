@@ -118,6 +118,8 @@ test(
     const username = page.locator("#name-input");
 
     await page.fill("#name-input", "Chris");
+    await page.locator('#name-input').evaluate(e => e.blur());
+    await page.waitForTimeout(500);
     await page.reload();
 
     await page.waitForLoadState("domcontentloaded");
